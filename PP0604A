@@ -1,0 +1,44 @@
+import java.util.*;
+import java.lang.*;
+import java.util.Scanner;
+
+class Main
+{
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        for (int j = 0; j< t; j++) {
+            int n = scanner.nextInt();
+            int[] tab = new int[n];
+            double sum = 0;
+            for (int i = 0; i < n; i++) {
+                tab[i] = scanner.nextInt();
+                sum += tab[i];
+            }
+            double arithmeticMean = sum / n;
+            double d;
+            double[] tab2 = new double[n];
+            for (int i = 0; i < n; i++) {
+                d = arithmeticMean - tab[i];
+                if (d < 0) d = -d;
+                else d = d;
+                tab2[i] = d;
+            }
+            double min = tab2[0];
+            for (int i = 0; i < n; i++) {
+                if (min > tab2[i]) {
+                    min = tab2[i];
+                }
+            }
+
+            for (int i = 0; i < n; i++) {
+                if (((arithmeticMean - min) == tab[i]) || ((arithmeticMean + min) == tab[i])) {
+                    System.out.println(tab[i]);
+                    break;
+                }
+            }
+        }
+
+    }
+}
