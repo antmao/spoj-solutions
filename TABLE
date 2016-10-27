@@ -1,0 +1,22 @@
+import java.lang.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Main
+{
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        Scanner scanner = new Scanner(System.in);
+        List<Integer> list = new ArrayList<Integer>();
+        int i = 0;
+        while(i<10){
+            int t =scanner.nextInt();
+            list.add(i,t);
+            i++;
+        }
+        for (int x = list.size(); x>0 ; x--){
+            System.out.println(list.get(x-1));
+        }
+    }
+}
